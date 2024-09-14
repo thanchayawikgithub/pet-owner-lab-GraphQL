@@ -15,11 +15,11 @@ export class OwnerService {
   }
 
   findAll() {
-    return this.ownerRepo.find();
+    return this.ownerRepo.find({ relations: { pets: true } });
   }
 
   findOne(id: number) {
-    return this.ownerRepo.findOne({ where: { id } });
+    return this.ownerRepo.findOne({ where: { id }, relations: { pets: true } });
   }
 
   async update(id: number, updateOwnerInput: UpdateOwnerInput) {

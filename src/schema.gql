@@ -38,6 +38,7 @@ type Query {
   owner(id: Int!): Owner!
   owners: [Owner!]!
   pet(id: Int!): Pet!
+  pets: [Pet!]!
 }
 
 input UpdateOwnerInput {
